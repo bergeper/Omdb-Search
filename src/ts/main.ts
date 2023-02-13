@@ -1,6 +1,9 @@
+require("dotenv").config();
 import axios from "axios";
 import { IMovie } from "./models/IMovie";
 import { IOmdbResponse } from "./models/IOmdbResponse";
+
+const key = process.env.key;
 
 window.addEventListener("load", () => {
   searchContainer.appendChild(searchHeading);
@@ -27,7 +30,7 @@ searchContainer.classList.add("hero");
 searchHeading.classList.add("hero__heading");
 searchInformation.classList.add("hero__info");
 
-searchHeading.innerText = "Hello There!";
+searchHeading.innerText = "Omdb-Search";
 searchInformation.innerText = "Search for a movie";
 
 // Search-bar n button
@@ -55,9 +58,7 @@ searchContent.classList.add("content");
 // Search for a movie
 searchButton.addEventListener("click", () => {
   axios
-    .get<IOmdbResponse>(
-      "http://omdbapi.com?apikey=8a61fbc3&s=" + searchBar.value
-    )
+    .get<IOmdbResponse>(`http://omdbapi.com?apikey=${key}&s=` + searchBar.value)
     .then((response) => {
       loadResult(response.data.Search);
       searchBar.value = "";

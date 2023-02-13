@@ -1,6 +1,8 @@
 .wrapper {
   min-height: 100vh;
-  background-color: rgba(7, 151, 7, 0.445);
+  background-color: black;
+  color: #3a7afa;
+  font-weight: 700;
 }
 
 .hero {
@@ -10,8 +12,11 @@
   align-items: center;
   &__heading {
     margin: 0;
+    margin-top: 30px;
+    font-size: 37px;
   }
   &__info {
+    font-size: 30px;
     margin: 0 0 20px 0;
   }
 }
@@ -21,12 +26,34 @@
   flex-direction: row;
   &__btn {
     font-family: Montserrat;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: 600;
+    background-color: #3a7afa;
+    border: 2px solid white;
+  }
+  &__btn:hover {
+    scale: 1.1;
+  }
+  &__btn:active {
+    scale: 0.9;
+  }
+  &__bar {
+    border-radius: 10px;
+    padding: 6px;
+    margin: 5px;
+    color: white;
+    font-weight: 600;
+    border: 2px solid white;
+    background-color: #3a7afa;
   }
 }
 
 .content {
   width: 100%;
-  margin: 60px 0 60px 0;
+  margin: 20px 0 60px 0;
 }
 
 .result {
@@ -44,7 +71,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(92, 253, 92, 0.247);
+  color: white;
+  border-radius: 10px;
+  background-color: #3a7afa8b;
   height: 600px;
   width: 400px;
   margin: 10px;
